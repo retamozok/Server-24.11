@@ -1,0 +1,25 @@
+{{> nav }}
+ <h1>Bienvenido a Mercado </h1>
+    
+    
+   <div class="row justify-content-around">
+    {{#each productos}}
+      <div class="col-5 col-sm-3 select-producto m-2 ms-0">
+            <img src="./img/products/{{url}}" class="col-12 m-1" alt="...">
+              <h5 class="titulo-producto">{{nombre}}</h5>
+              <h6>Precio: $ {{precio}}</h6>
+              <h6>Stock: {{stock}}</h6>
+              <p class="descripcion-produ">-La descripción va acá-</a>
+              
+              <form action="/carrito" method="post">
+                <input type="hidden" name="id" value={{id}}>
+                <input type="hidden" name="name" value={{name}}>
+                <input type="hidden" name="price" value={{price}}>
+                <input type="hidden" name="url" value={{url}}>
+                <input type="number" name="cantidad" min="1" max={{stock}}>
+                <button type="submit">Agregar al carrito</button>
+              </form>
+      </div>
+    </div>
+   {{/each}}
+ 

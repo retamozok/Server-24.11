@@ -1,0 +1,21 @@
+{{>nav}}
+
+<h1 class="mb-4">Mi Carrito</h1>
+
+{{#each carts}}
+
+  <div class="col-5 col-sm-3 select-producto m-2 ms-0">
+    <img src="./img/audio/parlante-jbl.jpg" class="col-12 m-1" alt="...">
+    <h5 class="titulo-producto">{{nombre}}</h5>
+    <h6>Precio: $ {{precio}}</h6>
+    <h6>Stock: {{stock}}</h6>
+    <p class="descripcion-produ">-La descripción va acá-</a>
+        
+  <form action="/carrito?_method=delete" method="post">
+    <input type="hidden" name="id" value={{id}}>
+    <button type="submit">Sacar del carrito</button>
+  </form>
+
+   </div>
+  </div>
+ {{/each}}
